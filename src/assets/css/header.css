@@ -1,0 +1,103 @@
+@import "vars.css";
+
+header.header {
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+    height: 90px;
+    width: 90%;
+    margin: 0 auto;
+    animation: slideDwon .5s forwards;
+    position: relative;
+    z-index: 1;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+.header nav {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.header nav > ul > .navMenu {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    list-style: none;
+    flex-wrap: nowrap;
+    align-self: center;
+}
+.header nav > ul > .navMenu > li {
+    padding: 0px 20px;
+}
+.header nav > ul > .navMenu > li > a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.7rem;
+}
+.header nav > ul > .navMenu > li > a.active {
+    color: var(--primary-color);
+}
+.navMenu {
+    z-index: 999 !important;
+}
+#checkbox_toggle, .hamburger {
+    display: none !important;
+}
+@media screen and (max-width: 768px) {
+    #mainHeader {
+        position: fixed;
+        top: 0;
+        left: 5vw;
+    }
+    .navMenu {
+        position: absolute;
+        background: rgba(0,0,0,0.7);
+        right: 0;
+        left: 0;
+        top: 0px;
+        text-align: center;
+        width: 80%;
+        height: 100vh;
+        padding: 16px 0;
+        transform: translateX(-80vw);
+        transition: .5s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center;
+    }
+    .navMenu li {
+        padding: 10px 0px !important;
+    }
+    .navMenu a {
+        font-size: 2.7rem !important;
+    }
+    .hamburger {
+        display: inline-flex !important;
+        font-size: 4rem;
+    }
+    #navigation-menu {
+        display: flex;
+        align-items: center;
+    }
+    #checkbox_toggle:checked ~ .navMenu {
+        transform: translateX(-5vw);
+    }
+
+}
+
+@keyframes slideDwon {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
